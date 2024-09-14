@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<TargetFrameworks>net6.0;net8.0</TargetFrameworks>
     <Description>DuckDB ADO.NET Provider for C#.</Description>
     <PackageReleaseNotes>
 	  Added support for creating user defined scalar functions.
@@ -24,7 +25,7 @@ Updated to DuckDB v1.1.0
   <ItemGroup>
     <PackageReference Include="GitVersion.MsBuild" Version="5.11.1" PrivateAssets="all" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+  <ItemGroup>
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
   </ItemGroup>

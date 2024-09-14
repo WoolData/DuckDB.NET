@@ -84,7 +84,22 @@ public class DuckDBDataChunk : SafeHandleZeroOrMinusOneIsInvalid
 
     protected override bool ReleaseHandle()
     {
-        NativeMethods.DataChunks.DuckDBDestroyDataChunk(out handle);
-        return true;
+        try
+        {
+            Console.WriteLine($"Releasing DuckDBDataChunk handle: {handle}"); // Debug output
+            if (handle != IntPtr.Zero)
+            {
+                IntPtr handleCopy = handle;
+                NativeMethods.DataChunks.DuckDBDestroyDataChunk(out handleCopy);
+                handle = IntPtr.Zero;
+                return true;
+            }
+            return false;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception in ReleaseHandle: {ex}"); // Log the exception
+            return false;
+        }
     }
 }

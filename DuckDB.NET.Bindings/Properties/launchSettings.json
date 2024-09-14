@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Bindings": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

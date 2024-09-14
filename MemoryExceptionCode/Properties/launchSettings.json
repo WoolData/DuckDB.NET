@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MemoryExceptionCode": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
